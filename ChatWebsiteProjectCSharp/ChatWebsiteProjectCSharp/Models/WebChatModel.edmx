@@ -386,7 +386,7 @@
           <End Role="app_user" Type="Self.app_user" Multiplicity="*" />
           <End Role="app_role" Type="Self.app_role" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="WebChatEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="WebChatEntitiesModel" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="app_role" EntityType="Self.app_role" />
           <EntitySet Name="app_user" EntityType="Self.app_user" />
           <EntitySet Name="customers" EntityType="Self.customer" />
@@ -428,7 +428,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="WebChatModelStoreContainer" CdmEntityContainer="WebChatEntities1">
+        <EntityContainerMapping StorageEntityContainer="WebChatModelStoreContainer" CdmEntityContainer="WebChatEntitiesModel">
           <EntitySetMapping Name="app_role">
             <EntityTypeMapping TypeName="WebChatModel.app_role">
               <MappingFragment StoreEntitySet="app_role">

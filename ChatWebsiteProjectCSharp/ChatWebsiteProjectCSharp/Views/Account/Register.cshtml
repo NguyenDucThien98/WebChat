@@ -1,4 +1,4 @@
-﻿
+﻿@model ChatWebsiteProjectCSharp.Models.RegisterModel
 @{
     Layout = null;
 }
@@ -20,53 +20,108 @@
     <div class="container-fluid">
         <div class="containerWebChat">
             <div class="col-md-6 col-lg-4 col-sm-7 col-xl-3 row-container">
-                <form action="" method="post">
+                @using (Html.BeginForm("Register","Account", FormMethod.Post)) {
+             
                     <div class="text-center">
                         <img class="rounded logo" src="~/image/Chat-2-512.png" />
                         <h1>Create Account</h1>
                     </div>
                     <div class="form-group">
                         <label for="username">Username :</label>
-                        <input type="text" name="username" id="username" class="form-control"
-                               placeholder="Enter your Username">
+                        @Html.TextBoxFor(s => s.Username,new {
+                       @id = "username",
+                       @class = "form-control",
+                       @placeholder = "Enter your Username"
+                   })
+                        @Html.ValidationMessageFor(s => s.Username,"",new {
+                       @class = "errorMessage",
+                   })
                     </div>
                     <div class="form-group">
                         <label for="password">Password :</label>
-                        <input type="password" name="password" id="password" class="form-control"
-                               placeholder="Enter your Password">
+                        @Html.TextBoxFor(s => s.Password,new {
+                       @id = "password",
+                       @class = "form-control",
+                       @placeholder = "Enter your Password",
+                       @type = "password"
+                   })
+                        @Html.ValidationMessageFor(s => s.Password,"",new {
+                       @class = "errorMessage",
+                   })
+                    </div>
+                    <div class="form-group">
+                        <label for="repassword">RePassword :</label>
+                        @Html.TextBoxFor(s => s.Repassword,new {
+                       @id = "repassword",
+                       @class = "form-control",
+                       @placeholder = "Enter your RePassword",
+                       @type = "password"
+                   })
+                        @Html.ValidationMessageFor(s => s.Repassword,"",new {
+                       @class = "errorMessage",
+                   })
                     </div>
                     <div class="form-group">
                         <label for="email">Email :</label>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email">
+                        @Html.TextBoxFor(s => s.Email,new {
+                       @id = "email",
+                       @class = "form-control",
+                       @placeholder = "Enter your Email",
+                       @type = "email"
+                   })
+                        @Html.ValidationMessageFor(s => s.Email,"",new {
+                       @class = "errorMessage",
+                   })
                     </div>
                     <div class="form-group">
                         <label for="fullname">Full Name :</label>
-                        <input type="text" name="fullname" id="fullname" class="form-control"
-                               placeholder="Enter your Full Name">
+                        @Html.TextBoxFor(s => s.Name,new {
+                       @id = "fullname",
+                       @class = "form-control",
+                       @placeholder = "Enter your Name"
+                   })
+                        @Html.ValidationMessageFor(s => s.Name,"",new {
+                       @class = "errorMessage",
+                   })
                     </div>
                     <div class="form-group">
                         <label for="date">Date :</label>
-                        <input class="form-control" type="date" id="date">
-
+                        @Html.TextBoxFor(s => s.Birth,new {
+                       @id = "date",
+                       @class = "form-control",
+                       @type = "date"
+                   })
+                        @Html.ValidationMessageFor(s => s.Birth,"",new {
+                       @class = "errorMessage",
+                   })
                     </div>
                     <div class="form-group">
-                        <label for="date">Gender :</label>
+                        <label for="gender">Gender :</label>
                         <br>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="customRadio1" name="gender">
+                            @Html.RadioButtonFor(model => model.Gender,true,new {
+                           @class = "custom-control-input",
+                           @id = "customRadio1",
+                           @name = "gender"
+                       })
+
                             <label class="custom-control-label" for="customRadio1">Male</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="customRadio2" name="gender">
+                            @Html.RadioButtonFor(model => model.Gender,false,new {
+                           @class = "custom-control-input",
+                           @id = "customRadio2",
+                           @name = "gender"
+                       })
                             <label class="custom-control-label" for="customRadio2">Female</label>
                         </div>
+                        @Html.ValidationMessageFor(s => s.Gender,"",new {
+                       @class = "errorMessage",
+                   })
                     </div>
-
-                    <a href="index.html" class="btn btn-danger btn-block" role="button">Register</a>
+                    <input type="submit" value="Register" class="btn btn-danger btn-block"/>
                     <a href="~/Account/Login" class="btn btn-light btn-block" role="button">Back</a>
-
-
-                </form>
+                }
             </div>
 
         </div>

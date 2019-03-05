@@ -1,88 +1,60 @@
-﻿using System;
+﻿using ChatWebsiteProjectCSharp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
-namespace ChatWebsiteProjectCSharp.Controllers
-{
-    public class AccountController : Controller
-    {
+namespace ChatWebsiteProjectCSharp.Controllers {
+    public class AccountController : Controller {
         // GET: Account
-        public ActionResult Index()
-        {
+        [HttpGet]
+        public ActionResult Login() {
             return View();
         }
-
-        // GET: Account/Details/5
-        public ActionResult Details(int id)
-        {
+        [HttpGet]
+        public ActionResult Register() {
             return View();
         }
-
-        // GET: Account/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Account/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Account/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Account/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Account/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Account/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
+        public ActionResult Register(RegisterModel entity) {
+            if (!ModelState.IsValid) {
+                return View("Register",entity);
+            } else {
+                try {
+                    using (var db = new WebChatEntitiesModel()) {
+                        //Generate new id
+                        Guid id = Guid.NewGuid();
+                        string username = entity.Username.Trim().ToLower();
+                        string password = entity.Password.Trim().ToLower();
+                        string encrypt_password = BCrypt.Net.BCrypt.HashPassword(password);
+                        var loginInfo = new app_user {
+                            app_user_id = id,
+                            username = username,
+                            encrypted_password = encrypt_password
+                        };
+                        db.app_user.Add(loginInfo);
+                        db.SaveChanges();
+                        string email = entity.Email.Trim().ToLower();
+                        string fullname = entity.Name.Trim();
+                        DateTime birth = entity.Birth;
+                        bool gender = entity.Gender;
+                        var customerInfo = new customer();
+                        customerInfo.app_user_id = id;
+                        customerInfo.fullname = fullname;
+                        customerInfo.status_online = true;
+                        customerInfo.last_online = DateTime.Now;
+                        customerInfo.email = email;
+                        customerInfo.gender = gender;
+                        customerInfo.birth = birth;
+                        db.customers.Add(customerInfo);
+                        db.SaveChanges();
+                        return RedirectToAction("Login","Account");
+                    }
+                } catch {
+                    throw;
+                }
             }
         }
     }

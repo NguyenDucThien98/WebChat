@@ -13,10 +13,10 @@ namespace ChatWebsiteProjectCSharp.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WebChatEntities1 : DbContext
+    public partial class WebChatEntitiesModel : DbContext
     {
-        public WebChatEntities1()
-            : base("name=WebChatEntities1")
+        public WebChatEntitiesModel()
+            : base("name=WebChatEntitiesModel")
         {
         }
     
