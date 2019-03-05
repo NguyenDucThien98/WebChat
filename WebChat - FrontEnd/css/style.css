@@ -1,88 +1,22 @@
-/* All your custom css style here */
+@import url('https://fonts.googleapis.com/css?family=Laila');
 
-/* For header */
-.dropdown-toggle::after {
-    display:none;
+html , body{
+    font-family: 'Laila';
+    font-size: 18px;
 }
-
-.dropdown-noti {
-    min-width: 430px;
-    min-height: 660px;
-    max-height: 660px;
+body{
+    background-image: url("/image/DSC_9227.JPG");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-color: teal;
 }
-
-.noti-header {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.noti-title {
-    float: left;
-}
-
-.make-all-read {
-    text-align: right;
-    color: blueviolet;
-}
-
-.make-all-read:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.noti-content {
-    list-style-type: none;
-    margin: 5px 0;
-    padding: 0;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
-    min-height: 580px;
-    max-height: 580px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-.row {
-    margin: 0;
-    padding: 15px 0;
-    border-bottom: 1px solid gray;
-}
-
-.row:hover {
-    background-color: #f8f8f8;
-    cursor: pointer;
-}
-
-.notify-img {
-    width: 100%;
-    height: 100%;
-}
-
-.notify-img img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-
-.row-content {
-    line-height: 24px;
-    height: 48px;
-    overflow: hidden;
-    font-weight: 450;
-}
-
-.row-time {
-    color: #90949c;
-}
-
-.noti-footer {
-    margin-left: 20px;
-    margin-right: 20px;
-    text-align: center;
-    color: blueviolet;
-}
-
-.noti-footer:hover {
-    text-decoration: underline;
-    cursor: pointer;
+.row-container{
+    box-shadow: 0px 0px 20px black;
+    color: white;
+    padding: 20px;
+    margin-top: 20vh;
+    border-radius: 25px;
+    text-shadow: 2px 2px 20px black;
 }
