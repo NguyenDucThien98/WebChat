@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Laila');
+
+html , body{
+    font-family: 'Laila';
+    font-size: 18px;
+}
+body{
+    background-image: url("/image/DSC_9227.JPG");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-color: teal;
+}
+.row-container{
+    box-shadow: 0px 0px 20px black;
+    color: white;
+    padding: 20px;
+    margin-top: 20vh;
+    border-radius: 25px;
+    text-shadow: 2px 2px 20px black;
+}
