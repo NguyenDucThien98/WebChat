@@ -18,6 +18,7 @@ namespace ChatWebsiteProjectCSharp.Controllers {
             return View();
         }
         [HttpPost]
+        
         public ActionResult Register(RegisterModel entity) {
             if (!ModelState.IsValid) {
                 return View("Register",entity);

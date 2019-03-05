@@ -36,4 +36,7 @@ h1, label{
     justify-content: center;
     align-items: center;
 }
-
+.avatar{
+    width: 10% !important;
+    height: 10% !important;
+}
