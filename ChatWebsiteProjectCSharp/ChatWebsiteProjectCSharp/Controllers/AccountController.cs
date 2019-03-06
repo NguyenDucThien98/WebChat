@@ -11,14 +11,21 @@ namespace ChatWebsiteProjectCSharp.Controllers {
         // GET: Account
         [HttpGet]
         public ActionResult Login() {
+            if (Request.IsAuthenticated) {
+                return RedirectToAction("Index","Home");
+            }
             return View();
+
         }
         [HttpGet]
         public ActionResult Register() {
+            if (Request.IsAuthenticated) {
+                return RedirectToAction("Index","Home");
+            }
             return View();
         }
         [HttpPost]
-        
+        [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel entity) {
             if (!ModelState.IsValid) {
                 return View("Register",entity);
@@ -57,6 +64,45 @@ namespace ChatWebsiteProjectCSharp.Controllers {
                     throw;
                 }
             }
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public ActionResult Login(LoginModel model) {
+            if (!ModelState.IsValid) {
+                return View("Login",model);
+            } else {
+                using (var db = new WebChatEntitiesModel()) {
+                    var userInfoDB = db.app_user.Where(s => s.username == model.UserName.ToLower().Trim()).FirstOrDefault();
+                    bool isLogin = false;
+                    if (userInfoDB != null) {
+                        var passwordDB = userInfoDB.encrypted_password;
+                        isLogin = BCrypt.Net.BCrypt.Verify(model.PassWord,passwordDB);
+                    } else {
+                        TempData["error"] = "Wrong Username!";
+                        return View("Login",model);
+                    }
+                    if (!isLogin) {
+                        TempData["error"] = "Wrong Password!";
+                        return View("Login",model);
+                    } else {
+                        SignInRemember(model.UserName,model.remember);
+                        Session["UserName"] = userInfoDB.username;
+                        setOnlineUser(db,userInfoDB.app_user_id);
+                        return RedirectToAction("Index","Home");
+                    }
+                }
+            }
+        }
+        [NonAction]
+        private void SignInRemember(string userName,bool isPersistent = false) {
+            FormsAuthentication.SignOut();
+            FormsAuthentication.SetAuthCookie(userName,isPersistent);
+        }
+        private void setOnlineUser(WebChatEntitiesModel db,Guid userID) {
+            var isOnline = db.customers.Find(userID);
+            isOnline.status_online = true;
+            db.SaveChanges();
         }
     }
 }

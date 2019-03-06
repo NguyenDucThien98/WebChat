@@ -1,4 +1,4 @@
-﻿
+﻿@model ChatWebsiteProjectCSharp.Models.LoginModel
 @{
     Layout = null;
 }
@@ -20,33 +20,57 @@
     <div class="container-fluid">
         <div class="containerWebChat">
             <div class="col-md-6 col-lg-4 col-sm-7 col-xl-3 row-container">
-                <form action="" method="post">
+                @using (Html.BeginForm("Login","Account",FormMethod.Post)) {
+                    @Html.AntiForgeryToken()
                     <div class="text-center">
                         <img class="rounded logo" src="~/image/Chat-2-512.png" />
                         <h1>WebChat</h1>
                     </div>
-
-
                     <div class="form-group">
                         <label for="username">Username :</label>
-                        <input type="text" name="username" id="username" class="form-control"
-                               placeholder="Enter your username">
+                        @Html.TextBoxFor(s => s.UserName,new {
+                       @name = "username",
+                       @id = "username",
+                       @class = "form-control",
+                       @placeholder = "Enter your username",
+                       type = "text"
+                   })
+                      @Html.ValidationMessageFor(s => s.UserName,"",new {
+                     @class = "errorMessage",
+                 })
+
                     </div>
                     <div class="form-group">
                         <label for="password">Password :</label>
-                        <input type="password" name="password" id="password" class="form-control"
-                               placeholder="Enter your password">
+                        @Html.TextBoxFor(s => s.PassWord,new {
+                       @name = "password",
+                       @id = "password",
+                       @class = "form-control",
+                       @placeholder = "Enter your password",
+                       @type = "password"
+                   })
+                        @Html.ValidationMessageFor(s => s.PassWord,"",new {
+                       @class = "errorMessage",
+                   })
                     </div>
                     <div class="custom-control custom-checkbox mb-3">
-                        <input type="checkbox" class="custom-control-input" id="rememberme" name="rememberme">
+                        @Html.CheckBoxFor(s => s.remember,new {
+                       @name = "rememberme",
+                       @id = "rememberme",
+                       @class = "custom-control-input",
+                       @type = "checkbox",
+
+                   })
                         <label class="custom-control-label" for="rememberme">Remember me</label>
                     </div>
                     <p class="text-right"><a class="text-light" href="#">Forgot Password</a></p>
-                    <a href="#" class="btn btn-success btn-block" role="button">Login</a>
+
+                        <label class="errorMessage"> @TempData["error"] </label>
+                    
+                    <input type="submit" class="btn btn-success btn-block" value="Login" role="button"/>
                     <a href="~/Account/Register" class="btn btn-danger btn-block" role="button">Register</a>
+                }
 
-
-                </form>
             </div>
         </div>
     </div>

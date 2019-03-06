@@ -20,8 +20,8 @@
     <div class="container-fluid">
         <div class="containerWebChat">
             <div class="col-md-6 col-lg-4 col-sm-7 col-xl-3 row-container">
-                @using (Html.BeginForm("Register","Account", FormMethod.Post)) {
-             
+                @using (Html.BeginForm("Register","Account",FormMethod.Post)) {
+                    @Html.AntiForgeryToken()
                     <div class="text-center">
                         <img class="rounded logo" src="~/image/Chat-2-512.png" />
                         <h1>Create Account</h1>
@@ -119,7 +119,7 @@
                        @class = "errorMessage",
                    })
                     </div>
-                    <input type="submit" value="Register" class="btn btn-danger btn-block"/>
+                    <input type="submit" value="Register" class="btn btn-danger btn-block" />
                     <a href="~/Account/Login" class="btn btn-light btn-block" role="button">Back</a>
                 }
             </div>
