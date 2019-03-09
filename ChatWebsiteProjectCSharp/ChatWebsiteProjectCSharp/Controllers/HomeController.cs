@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ChatWebsiteProjectCSharp.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : AuthenticationController
     {
         // GET: Home
         public ActionResult Index()

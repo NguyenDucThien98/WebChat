@@ -11,15 +11,18 @@ namespace ChatWebsiteProjectCSharp.Controllers {
         // GET: Account
         [HttpGet]
         public ActionResult Login() {
-            if (Request.IsAuthenticated) {
+            var session = Session["UserID"];
+            if (session != null) {
                 return RedirectToAction("Index","Home");
             }
+            System.Diagnostics.Debug.WriteLine("Chua xac thuc");
             return View();
 
         }
         [HttpGet]
         public ActionResult Register() {
-            if (Request.IsAuthenticated) {
+            var session = Session["UserID"];
+            if (session != null) {
                 return RedirectToAction("Index","Home");
             }
             return View();
@@ -87,8 +90,9 @@ namespace ChatWebsiteProjectCSharp.Controllers {
                         return View("Login",model);
                     } else {
                         SignInRemember(model.UserName,model.remember);
-                        Session["UserName"] = userInfoDB.username;
+                        Session["UserID"] = userInfoDB.app_user_id;
                         setOnlineUser(db,userInfoDB.app_user_id);
+                       
                         return RedirectToAction("Index","Home");
                     }
                 }
