@@ -13,14 +13,6 @@
 
 <body>
     <div class="header fixed-top">
-        <div class="header-info ">
-            <div class="title">
-                WebChat
-            </div>
-            <div class="infor-content">
-                Project C# SE1215
-            </div>
-        </div>
         <div class="menu">
             <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">WebChat</a>
@@ -64,6 +56,17 @@
                                     </i>
                                     Nguyễn Đức Thiện đã không đồng ý kết bạn
                                 </div>
+                                <div class="dropdown-item">
+                                    <i class="material-icons">
+                                        account_circle
+                                    </i>
+                                    Nguyễn Đức Thiện đã gửi 1 lời mời kết bạn
+                                    <div class="dropdown-item">
+                                        <button class="btn btn-outline-primary" type="submit">Confirm</button>
+                                        <button class="btn btn-outline-danger" type="submit">Delete</button>
+                                    </div>
+
+                                </div>
                             </div>
                         </li>
                         <li class="nav-item dropdown form-inline pr-2">
@@ -77,8 +80,12 @@
                                     <button class="btn btn-info w-100" type="submit">View Profile</button>
                                 </div>
                                 <div class="dropdown-item">
+                                    <button class="btn btn-success w-100" type="submit">List Friend</button>
+                                </div>
+                                <div class="dropdown-item">
                                     <button class="btn btn-danger w-100" type="submit">Logout</button>
                                 </div>
+
                             </div>
                         </li>
 
@@ -98,8 +105,8 @@
                 </form>
             </div>
             <div class="marginImportant"></div>
-            <div class="row">
-                <nav class="navbar navbar-expand-sm navbar-light  w-100">
+            <div class="row active">
+                <nav class="navbar navbar-expand-sm navbar-light   w-100">
                     <button class="navbar-toggler d-lg-none avt" type="button" data-toggle="collapse"
                         data-target="#Mess1" aria-label="Toggle navigation">
                         <div class="avt">
@@ -111,36 +118,39 @@
                             aria-label="Toggle navigation">
                             <img src="/image/DSC_9227.JPG" alt="Avatar">
                         </button>
-                        <button class="box-sms-left" type="button" data-toggle="collapse" data-target="#Mess1"
+                        <button class="box-sms-left notseen" type="button" data-toggle="collapse" data-target="#Mess1"
                             aria-label="Toggle navigation">
                             <div class="username-box-left">
                                 Nguyen duc Thien
                             </div>
-                            <div class="mess-box-left">
+                            <div class="mess-box-left ">
                                 Anh đang làm gì thế? Anh đang làm gì thế?
                                 Anh đang làm gì thế?
                                 Anh đang làm gì thế?
                                 Anh đang làm gì thế?
+                            </div>
+                            <div class="timebox">
+                                10:09 AM
                             </div>
                         </button>
                         <div class="clearfix"></div>
                     </div>
                 </nav>
             </div>
-            <div class="row">
+            <div class="row ">
                 <nav class="navbar navbar-expand-sm navbar-light  w-100">
                     <button class="navbar-toggler d-lg-none avt" type="button" data-toggle="collapse"
-                        data-target="#Mess1" aria-label="Toggle navigation">
+                        data-target="#Mess2" aria-label="Toggle navigation">
                         <div class="avt">
                             <img src="/image/DSC_9227.JPG" alt="Avatar">
                         </div>
                     </button>
                     <div class="collapse navbar-collapse">
-                        <button class="avt" type="button" data-toggle="collapse" data-target="#Mess1"
+                        <button class="avt" type="button" data-toggle="collapse" data-target="#Mess2"
                             aria-label="Toggle navigation">
                             <img src="/image/DSC_9227.JPG" alt="Avatar">
                         </button>
-                        <button class="box-sms-left" type="button" data-toggle="collapse" data-target="#Mess1"
+                        <button class="box-sms-left" type="button" data-toggle="collapse" data-target="#Mess2"
                             aria-label="Toggle navigation">
                             <div class="username-box-left">
                                 Nguyen duc Thien
@@ -151,160 +161,30 @@
                                 Anh đang làm gì thế?
                                 Anh đang làm gì thế?
                             </div>
-                        </button>
-                        <div class="clearfix"></div>
-                    </div>
-                </nav>
-            </div>
-            <div class="row">
-                <nav class="navbar navbar-expand-sm navbar-light  w-100">
-                    <button class="navbar-toggler d-lg-none avt" type="button" data-toggle="collapse"
-                        data-target="#Mess1" aria-label="Toggle navigation">
-                        <div class="avt">
-                            <img src="/image/DSC_9227.JPG" alt="Avatar">
-                        </div>
-                    </button>
-                    <div class="collapse navbar-collapse">
-                        <button class="avt" type="button" data-toggle="collapse" data-target="#Mess1"
-                            aria-label="Toggle navigation">
-                            <img src="/image/DSC_9227.JPG" alt="Avatar">
-                        </button>
-                        <button class="box-sms-left" type="button" data-toggle="collapse" data-target="#Mess1"
-                            aria-label="Toggle navigation">
-                            <div class="username-box-left">
-                                Nguyen duc Thien
-                            </div>
-                            <div class="mess-box-left">
-                                Anh đang làm gì thế? Anh đang làm gì thế?
-                                Anh đang làm gì thế?
-                                Anh đang làm gì thế?
-                                Anh đang làm gì thế?
+                            <div class="timebox">
+                                10:09 AM
                             </div>
                         </button>
                         <div class="clearfix"></div>
                     </div>
                 </nav>
             </div>
-            <div class="row">
-                <nav class="navbar navbar-expand-sm navbar-light  w-100">
-                    <button class="navbar-toggler d-lg-none avt" type="button" data-toggle="collapse"
-                        data-target="#Mess1" aria-label="Toggle navigation">
-                        <div class="avt">
-                            <img src="/image/DSC_9227.JPG" alt="Avatar">
-                        </div>
-                    </button>
-                    <div class="collapse navbar-collapse">
-                        <button class="avt" type="button" data-toggle="collapse" data-target="#Mess1"
-                            aria-label="Toggle navigation">
-                            <img src="/image/DSC_9227.JPG" alt="Avatar">
-                        </button>
-                        <button class="box-sms-left" type="button" data-toggle="collapse" data-target="#Mess1"
-                            aria-label="Toggle navigation">
-                            <div class="username-box-left">
-                                Nguyen duc Thien
-                            </div>
-                            <div class="mess-box-left">
-                                Anh đang làm gì thế? Anh đang làm gì thế?
-                                Anh đang làm gì thế?
-                                Anh đang làm gì thế?
-                                Anh đang làm gì thế?
-                            </div>
-                        </button>
-                        <div class="clearfix"></div>
-                    </div>
-                </nav>
-            </div>
-            <div class="row">
-                <nav class="navbar navbar-expand-sm navbar-light  w-100">
-                    <button class="navbar-toggler d-lg-none avt" type="button" data-toggle="collapse"
-                        data-target="#Mess1" aria-label="Toggle navigation">
-                        <div class="avt">
-                            <img src="/image/DSC_9227.JPG" alt="Avatar">
-                        </div>
-                    </button>
-                    <div class="collapse navbar-collapse">
-                        <button class="avt" type="button" data-toggle="collapse" data-target="#Mess1"
-                            aria-label="Toggle navigation">
-                            <img src="/image/DSC_9227.JPG" alt="Avatar">
-                        </button>
-                        <button class="box-sms-left" type="button" data-toggle="collapse" data-target="#Mess1"
-                            aria-label="Toggle navigation">
-                            <div class="username-box-left">
-                                Nguyen duc Thien
-                            </div>
-                            <div class="mess-box-left">
-                                Anh đang làm gì thế? Anh đang làm gì thế?
-                                Anh đang làm gì thế?
-                                Anh đang làm gì thế?
-                                Anh đang làm gì thế?
-                            </div>
-                        </button>
-                        <div class="clearfix"></div>
-                    </div>
-                </nav>
-            </div>
-            <div class="row">
-                <nav class="navbar navbar-expand-sm navbar-light  w-100">
-                    <button class="navbar-toggler d-lg-none avt" type="button" data-toggle="collapse"
-                        data-target="#Mess1" aria-label="Toggle navigation">
-                        <div class="avt">
-                            <img src="/image/DSC_9227.JPG" alt="Avatar">
-                        </div>
-                    </button>
-                    <div class="collapse navbar-collapse">
-                        <button class="avt" type="button" data-toggle="collapse" data-target="#Mess1"
-                            aria-label="Toggle navigation">
-                            <img src="/image/DSC_9227.JPG" alt="Avatar">
-                        </button>
-                        <button class="box-sms-left" type="button" data-toggle="collapse" data-target="#Mess1"
-                            aria-label="Toggle navigation">
-                            <div class="username-box-left">
-                                Nguyen duc Thien
-                            </div>
-                            <div class="mess-box-left">
-                                Anh đang làm gì thế? Anh đang làm gì thế?
-                                Anh đang làm gì thế?
-                                Anh đang làm gì thế?
-                                Anh đang làm gì thế?
-                            </div>
-                        </button>
-                        <div class="clearfix"></div>
-                    </div>
-                </nav>
-            </div>
-            <div class="row">
-                <nav class="navbar navbar-expand-sm navbar-light  w-100">
-                    <button class="navbar-toggler d-lg-none avt" type="button" data-toggle="collapse"
-                        data-target="#Mess1" aria-label="Toggle navigation">
-                        <div class="avt">
-                            <img src="/image/DSC_9227.JPG" alt="Avatar">
-                        </div>
-                    </button>
-                    <div class="collapse navbar-collapse">
-                        <button class="avt" type="button" data-toggle="collapse" data-target="#Mess1"
-                            aria-label="Toggle navigation">
-                            <img src="/image/DSC_9227.JPG" alt="Avatar">
-                        </button>
-                        <button class="box-sms-left" type="button" data-toggle="collapse" data-target="#Mess1"
-                            aria-label="Toggle navigation">
-                            <div class="username-box-left">
-                                Nguyen duc Thien
-                            </div>
-                            <div class="mess-box-left">
-                                Anh đang làm gì thế? Anh đang làm gì thế?
-                                Anh đang làm gì thế?
-                                Anh đang làm gì thế?
-                                Anh đang làm gì thế?
-                            </div>
-                        </button>
-                        <div class="clearfix"></div>
-                    </div>
-                </nav>
-            </div>
+          
+
 
 
         </div>
-        <div class="right-Box flex-row" id="Mess1">
+        <div class="right-Box" id="Mess1">
+            <div class="row justify-content-start"  id="Mess1">
+                <form class="rightheader form-check-inline">
+                    <img src="/image/DSC_9227.JPG" alt="Avatar">
+                    <div class="pl-3">
+                        <div class="name"> Nguyen Duc Thien</div>
+                        online
+                    </div>
+                </form>
+            </div>
+            <div class="marginImportant"></div>
             <div class="row justify-content-start">
                 <div class="reserveAvt">
                     <img src="/image/DSC_9227.JPG" alt="Avatar">
@@ -314,67 +194,57 @@
                         <p>
                             Anh đang làm gì thế?
                             Anh đang làm gì thế? Anh đang làm gì thế?
+                            Anh đang làm gì thế?
+                            Anh đang làm gì thế? Anh đang làm gì thế?
+                            Anh đang làm gì thế?
+                         h đang làm gì thế?
                         </p>
                     </div>
+                </div>
+                <div class="timebox pl-2">
+                    10:09 AM
                 </div>
 
             </div>
-            <div class="row  justify-content-start">
-                <div class="reserveAvt">
-                    <img src="/image/DSC_9227.JPG" alt="Avatar">
-                </div>
-                <div class="w-custom">
-                    <div class="reserveContent">
-                        <p>
-                            Anh đang làm gì thế?
-                            Anh đang làm gì thế? Anh đang làm gì thế?
-                            Anh đang làm gì thế?
-                            Anh đang làm gì thế? Anh đang làm gì thế?
-                            đang làm gì thế?
-                            Anh đang làm gì thế?
-                        </p>
-                    </div>
-                </div>
-            </div>
+
+
             <div class="row justify-content-end">
+                <div class="timebox pr-2">
+                    10:09 AM
+                </div>
                 <div class="w-custom">
                     <div class="sentContent text-right">
-                        <p>
-                            Anh đang làm gì thế?
-                            Anh đang làm gì thế? Anh đang làm gì thế?
-                            Anh đang làm gì thế?
-
-                        </p>
+                            <div class="sentAvt2">
+                                    <img src="/image/DSC_9227.JPG" alt="Avatar">
+                                </div>
                     </div>
                 </div>
                 <div class="sentAvt">
                     <img src="/image/DSC_9227.JPG" alt="Avatar">
                 </div>
             </div>
-            <div class="row justify-content-end ">
-                <div class="w-custom">
-                    <div class="sentContent text-right ">
-                        <p>
-                            Anh đang làm gì thế?
-                            Anh đang làm gì thế? Anh đang làm gì thế?
-                            Anh đang làm gì thế?
-                            Anh đang làm gì thế? Anh đang làm gì thế?
-                            Anh đang làm gì thế? Anh đang làm gì thế?
-                            Anh đang làm gì thế? Anh đang làm gì thế?
-                            Anh đang làm gì thế? Anh đang làm gì thế?
-                            Anh đang làm gì thế? Anh đang làm gì thế?
-                            Anh đang làm gì thế? Anh đang làm gì thế?
-                            Anh đang làm gì thế?
-                        </p>
+            <div class="row justify-content-start">
+                    <div class="reserveAvt">
+                        <img src="/image/DSC_9227.JPG" alt="Avatar">
                     </div>
+                    <div class="w-custom">
+                            <div class="sentContent text-right">
+                                    <div class="sentAvt2">
+                                            <img src="/image/hinh-hoa.jpg" alt="Avatar">
+                                        </div>
+                            </div>
+                    </div>
+                    <div class="timebox pl-2">
+                        10:09 AM
+                    </div>
+    
                 </div>
 
-
-
-                <div class="sentAvt">
-                    <img src="/image/DSC_9227.JPG" alt="Avatar">
-                </div>
-
+            <div class="row justify-content-end sentbtn" id="Mess1">
+                <form class="w-100 form-inline">
+                    <input class="form-control" type="text" placeholder="enter your message">
+                    <button class="btn btn-danger" type="submit">Sent</button>
+                </form>
             </div>
         </div>
     </div>

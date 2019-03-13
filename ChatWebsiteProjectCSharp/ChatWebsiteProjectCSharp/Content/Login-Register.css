@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Laila');
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 * {
     margin: 0px;
@@ -15,7 +17,7 @@ body{
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center ;
-    background-color: teal;
+
 }
 .row-container{
     box-shadow: 0px 0px 20px black;
@@ -24,7 +26,7 @@ body{
     border-radius: 25px;
 }
 h1, label{
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 2px 2px 20px black;
 }
 .logo{
     width: 40%;
@@ -36,8 +38,3 @@ h1, label{
     justify-content: center;
     align-items: center;
 }
-.errorMessage{
-    color: yellow;
-     text-shadow: 2px 2px 2px black;
-}
-

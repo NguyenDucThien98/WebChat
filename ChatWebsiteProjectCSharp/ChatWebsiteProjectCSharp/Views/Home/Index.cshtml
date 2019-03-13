@@ -1,18 +1,155 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Header_Footer.cshtml";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-        indexhome
+<div class="left-Box">
+    <div class="row">
+        <form class="w-100 searchbtn">
+            <input class="form-control w-100" type="text" placeholder="Search">
+            <button class="btn btn-success w-100" type="submit">Search</button>
+        </form>
     </div>
-</body>
-</html>
+    <div class="marginImportant"></div>
+    <div class="row active">
+        <nav class="navbar navbar-expand-sm navbar-light   w-100">
+            <button class="navbar-toggler d-lg-none avt" type="button" data-toggle="collapse"
+                    data-target="#Mess1" aria-label="Toggle navigation">
+                <div class="avt">
+                    <img src="/image/DSC_9227.JPG" alt="Avatar">
+                </div>
+            </button>
+            <div class="collapse navbar-collapse">
+                <button class="avt" type="button" data-toggle="collapse" data-target="#Mess1"
+                        aria-label="Toggle navigation">
+                    <img src="/image/DSC_9227.JPG" alt="Avatar">
+                </button>
+                <button class="box-sms-left notseen" type="button" data-toggle="collapse" data-target="#Mess1"
+                        aria-label="Toggle navigation">
+                    <div class="username-box-left">
+                        Nguyen duc Thien
+                    </div>
+                    <div class="mess-box-left ">
+                        Anh đang làm gì thế? Anh đang làm gì thế?
+                        Anh đang làm gì thế?
+                        Anh đang làm gì thế?
+                        Anh đang làm gì thế?
+                    </div>
+                    <div class="timebox">
+                        10:09 AM
+                    </div>
+                </button>
+                <div class="clearfix"></div>
+            </div>
+        </nav>
+    </div>
+    <div class="row ">
+        <nav class="navbar navbar-expand-sm navbar-light  w-100">
+            <button class="navbar-toggler d-lg-none avt" type="button" data-toggle="collapse"
+                    data-target="#Mess2" aria-label="Toggle navigation">
+                <div class="avt">
+                    <img src="/image/DSC_9227.JPG" alt="Avatar">
+                </div>
+            </button>
+            <div class="collapse navbar-collapse">
+                <button class="avt" type="button" data-toggle="collapse" data-target="#Mess2"
+                        aria-label="Toggle navigation">
+                    <img src="/image/DSC_9227.JPG" alt="Avatar">
+                </button>
+                <button class="box-sms-left" type="button" data-toggle="collapse" data-target="#Mess2"
+                        aria-label="Toggle navigation">
+                    <div class="username-box-left">
+                        Nguyen duc Thien
+                    </div>
+                    <div class="mess-box-left">
+                        Anh đang làm gì thế? Anh đang làm gì thế?
+                        Anh đang làm gì thế?
+                        Anh đang làm gì thế?
+                        Anh đang làm gì thế?
+                    </div>
+                    <div class="timebox">
+                        10:09 AM
+                    </div>
+                </button>
+                <div class="clearfix"></div>
+            </div>
+        </nav>
+    </div>
+
+
+
+
+</div>
+<div class="right-Box" id="Mess1">
+    <div class="row justify-content-start" id="Mess1">
+        <form class="rightheader form-check-inline">
+            <img src="/image/DSC_9227.JPG" alt="Avatar">
+            <div class="pl-3">
+                <div class="name"> Nguyen Duc Thien</div>
+                online
+            </div>
+        </form>
+    </div>
+    <div class="marginImportant"></div>
+    <div class="row justify-content-start">
+        <div class="reserveAvt">
+            <img src="/image/DSC_9227.JPG" alt="Avatar">
+        </div>
+        <div class="w-custom">
+            <div class="reserveContent">
+                <p>
+                    Anh đang làm gì thế?
+                    Anh đang làm gì thế? Anh đang làm gì thế?
+                    Anh đang làm gì thế?
+                    Anh đang làm gì thế? Anh đang làm gì thế?
+                    Anh đang làm gì thế?
+                    h đang làm gì thế?
+                </p>
+            </div>
+        </div>
+        <div class="timebox pl-2">
+            10:09 AM
+        </div>
+
+    </div>
+
+
+    <div class="row justify-content-end">
+        <div class="timebox pr-2">
+            10:09 AM
+        </div>
+        <div class="w-custom">
+            <div class="sentContent text-right">
+                <div class="sentAvt2">
+                    <img src="/image/DSC_9227.JPG" alt="Avatar">
+                </div>
+            </div>
+        </div>
+        <div class="sentAvt">
+            <img src="/image/DSC_9227.JPG" alt="Avatar">
+        </div>
+    </div>
+    <div class="row justify-content-start">
+        <div class="reserveAvt">
+            <img src="/image/DSC_9227.JPG" alt="Avatar">
+        </div>
+        <div class="w-custom">
+            <div class="sentContent text-right">
+                <div class="sentAvt2">
+                    <img src="/image/hinh-hoa.jpg" alt="Avatar">
+                </div>
+            </div>
+        </div>
+        <div class="timebox pl-2">
+            10:09 AM
+        </div>
+
+    </div>
+
+    <div class="row justify-content-end sentbtn" id="Mess1">
+        <form class="w-100 form-inline">
+            <input class="form-control" type="text" placeholder="enter your message">
+            <button class="btn btn-danger" type="submit">Sent</button>
+        </form>
+    </div>
+</div>

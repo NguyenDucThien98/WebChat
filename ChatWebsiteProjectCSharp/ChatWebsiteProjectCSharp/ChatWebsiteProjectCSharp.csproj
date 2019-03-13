@@ -151,7 +151,8 @@
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\style.css" />
+    <Content Include="Content\Home.css" />
+    <Content Include="Content\Login-Register.css" />
     <Content Include="Global.asax" />
     <Content Include="image\anh-nen-may-tinh-cuc-dep-cua-bo-phim-your-name-cau-ten-la-gi-dang-hot-fptshop-3.jpg" />
     <Content Include="image\Chat-2-512.png" />
@@ -247,6 +248,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Views\Header_Footer.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
