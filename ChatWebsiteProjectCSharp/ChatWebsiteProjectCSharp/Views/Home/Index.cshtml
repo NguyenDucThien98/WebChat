@@ -11,75 +11,15 @@
         </form>
     </div>
     <div class="marginImportant"></div>
-    <div class="row active">
-        <nav class="navbar navbar-expand-sm navbar-light   w-100">
-            <button class="navbar-toggler d-lg-none avt" type="button" data-toggle="collapse"
-                    data-target="#Mess1" aria-label="Toggle navigation">
-                <div class="avt">
-                    <img src="/image/DSC_9227.JPG" alt="Avatar">
-                </div>
-            </button>
-            <div class="collapse navbar-collapse">
-                <button class="avt" type="button" data-toggle="collapse" data-target="#Mess1"
-                        aria-label="Toggle navigation">
-                    <img src="/image/DSC_9227.JPG" alt="Avatar">
-                </button>
-                <button class="box-sms-left notseen" type="button" data-toggle="collapse" data-target="#Mess1"
-                        aria-label="Toggle navigation">
-                    <div class="username-box-left">
-                        Nguyen duc Thien
-                    </div>
-                    <div class="mess-box-left ">
-                        Anh đang làm gì thế? Anh đang làm gì thế?
-                        Anh đang làm gì thế?
-                        Anh đang làm gì thế?
-                        Anh đang làm gì thế?
-                    </div>
-                    <div class="timebox">
-                        10:09 AM
-                    </div>
-                </button>
-                <div class="clearfix"></div>
-            </div>
-        </nav>
-    </div>
-    <div class="row ">
-        <nav class="navbar navbar-expand-sm navbar-light  w-100">
-            <button class="navbar-toggler d-lg-none avt" type="button" data-toggle="collapse"
-                    data-target="#Mess2" aria-label="Toggle navigation">
-                <div class="avt">
-                    <img src="/image/DSC_9227.JPG" alt="Avatar">
-                </div>
-            </button>
-            <div class="collapse navbar-collapse">
-                <button class="avt" type="button" data-toggle="collapse" data-target="#Mess2"
-                        aria-label="Toggle navigation">
-                    <img src="/image/DSC_9227.JPG" alt="Avatar">
-                </button>
-                <button class="box-sms-left" type="button" data-toggle="collapse" data-target="#Mess2"
-                        aria-label="Toggle navigation">
-                    <div class="username-box-left">
-                        Nguyen duc Thien
-                    </div>
-                    <div class="mess-box-left">
-                        Anh đang làm gì thế? Anh đang làm gì thế?
-                        Anh đang làm gì thế?
-                        Anh đang làm gì thế?
-                        Anh đang làm gì thế?
-                    </div>
-                    <div class="timebox">
-                        10:09 AM
-                    </div>
-                </button>
-                <div class="clearfix"></div>
-            </div>
-        </nav>
-    </div>
-
-
-
-
+    @{
+        Html.RenderAction("getLeftChatBox","Home",new {
+            page = 1
+        });
+    }
+   
 </div>
+
+
 <div class="right-Box" id="Mess1">
     <div class="row justify-content-start" id="Mess1">
         <form class="rightheader form-check-inline">

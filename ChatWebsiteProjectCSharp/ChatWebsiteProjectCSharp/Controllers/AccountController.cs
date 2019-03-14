@@ -34,34 +34,47 @@ namespace ChatWebsiteProjectCSharp.Controllers {
                 return View("Register",entity);
             } else {
                 try {
-                    using (var db = new WebChatEntitiesModel()) {
-                        //Generate new id
+                    using (var db = new WebChat2Entities()) {
                         Guid id = Guid.NewGuid();
                         string username = entity.Username.Trim().ToLower();
-                        string password = entity.Password.Trim().ToLower();
-                        string encrypt_password = BCrypt.Net.BCrypt.HashPassword(password);
-                        var loginInfo = new app_user {
-                            app_user_id = id,
-                            username = username,
-                            encrypted_password = encrypt_password
-                        };
-                        db.app_user.Add(loginInfo);
-                        db.SaveChanges();
-                        string email = entity.Email.Trim().ToLower();
-                        string fullname = entity.Name.Trim();
-                        DateTime birth = entity.Birth;
-                        bool gender = entity.Gender;
-                        var customerInfo = new customer();
-                        customerInfo.app_user_id = id;
-                        customerInfo.fullname = fullname;
-                        customerInfo.status_online = true;
-                        customerInfo.last_online = DateTime.Now;
-                        customerInfo.email = email;
-                        customerInfo.gender = gender;
-                        customerInfo.birth = birth;
-                        db.customers.Add(customerInfo);
-                        db.SaveChanges();
-                        return RedirectToAction("Login","Account");
+                        var check = db.app_user.Where(u => u.username == username);
+                        if (check.Count() == 0) {
+                            string password = entity.Password.Trim().ToLower();
+                            string encrypt_password = BCrypt.Net.BCrypt.HashPassword(password);
+                            var loginInfo = new app_user {
+                                app_user_id = id,
+                                username = username,
+                                encrypted_password = encrypt_password
+                            };
+                            db.app_user.Add(loginInfo);
+                            db.SaveChanges();
+                            string email = entity.Email.Trim().ToLower();
+                            string fullname = entity.Name.Trim();
+                            DateTime birth = entity.Birth;
+                            bool gender = entity.Gender;
+                            var customerInfo = new customer();
+                            customerInfo.app_user_id = id;
+                            customerInfo.fullname = fullname;
+                            customerInfo.status_online = false;
+                            customerInfo.last_online = DateTime.Now;
+                            customerInfo.email = email;
+                            customerInfo.gender = gender;
+                            customerInfo.birth = birth;
+                            if (gender) {
+                                customerInfo.avatar = "1nam.png";
+                            } else {
+                                customerInfo.avatar = "0nu.png";
+                            }
+                            customerInfo.last_change_password = DateTime.Now;
+                            db.customers.Add(customerInfo);
+                            db.SaveChanges();
+                            TempData["error"] = "Register successfuly!";
+                            return View("Register",entity);
+                        } else {
+                            TempData["error"] = "username is duplicate!";
+                            return View("Register",entity);
+                        }
+
                     }
                 } catch {
                     throw;
@@ -75,7 +88,7 @@ namespace ChatWebsiteProjectCSharp.Controllers {
             if (!ModelState.IsValid) {
                 return View("Login",model);
             } else {
-                using (var db = new WebChatEntitiesModel()) {
+                using (var db = new WebChat2Entities()) {
                     var userInfoDB = db.app_user.Where(s => s.username == model.UserName.ToLower().Trim()).FirstOrDefault();
                     bool isLogin = false;
                     if (userInfoDB != null) {
@@ -92,7 +105,7 @@ namespace ChatWebsiteProjectCSharp.Controllers {
                         SignInRemember(model.UserName,model.remember);
                         Session["UserID"] = userInfoDB.app_user_id;
                         setOnlineUser(db,userInfoDB.app_user_id);
-                       
+
                         return RedirectToAction("Index","Home");
                     }
                 }
@@ -103,7 +116,7 @@ namespace ChatWebsiteProjectCSharp.Controllers {
             FormsAuthentication.SignOut();
             FormsAuthentication.SetAuthCookie(userName,isPersistent);
         }
-        private void setOnlineUser(WebChatEntitiesModel db,Guid userID) {
+        private void setOnlineUser(WebChat2Entities db,Guid userID) {
             var isOnline = db.customers.Find(userID);
             isOnline.status_online = true;
             db.SaveChanges();

@@ -13,10 +13,10 @@ namespace ChatWebsiteProjectCSharp.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WebChatEntitiesModel : DbContext
+    public partial class WebChat2Entities : DbContext
     {
-        public WebChatEntitiesModel()
-            : base("name=WebChatEntitiesModel")
+        public WebChat2Entities()
+            : base("name=WebChat2Entities")
         {
         }
     
@@ -30,7 +30,8 @@ namespace ChatWebsiteProjectCSharp.Models
         public virtual DbSet<customer> customers { get; set; }
         public virtual DbSet<message> messages { get; set; }
         public virtual DbSet<notify> notifies { get; set; }
-        public virtual DbSet<relationship> relationships { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<message_info> message_info { get; set; }
+        public virtual DbSet<relationship> relationships { get; set; }
     }
 }

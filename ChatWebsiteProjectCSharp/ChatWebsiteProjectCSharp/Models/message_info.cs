@@ -12,13 +12,15 @@ namespace ChatWebsiteProjectCSharp.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class relationship
+    public partial class message_info
     {
-        public System.Guid cus1_id { get; set; }
-        public System.Guid cus2_id { get; set; }
-        public int relationship_status { get; set; }
+        public System.Guid message_id { get; set; }
+        public System.Guid cus_send_id { get; set; }
+        public System.Guid cus_receive_id { get; set; }
+        public string message { get; set; }
+        public System.DateTimeOffset send_time { get; set; }
+        public int message_status { get; set; }
     
-        public virtual customer customer { get; set; }
-        public virtual customer customer1 { get; set; }
+        public virtual message message1 { get; set; }
     }
 }

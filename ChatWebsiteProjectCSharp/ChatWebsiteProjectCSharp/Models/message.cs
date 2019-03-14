@@ -14,14 +14,19 @@ namespace ChatWebsiteProjectCSharp.Models
     
     public partial class message
     {
-        public System.Guid id { get; set; }
-        public System.Guid cus_send_id { get; set; }
-        public System.Guid cus_receive_id { get; set; }
-        public string message1 { get; set; }
-        public System.DateTimeOffset send_time { get; set; }
-        public int message_status { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public message()
+        {
+            this.message_info = new HashSet<message_info>();
+        }
+    
+        public System.Guid message_id { get; set; }
+        public Nullable<System.Guid> user_1 { get; set; }
+        public Nullable<System.Guid> user_2 { get; set; }
     
         public virtual customer customer { get; set; }
         public virtual customer customer1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<message_info> message_info { get; set; }
     }
 }

@@ -5,17 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+
     <link href="~/Content/Home.css" rel="stylesheet" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Home</title>
 </head>
-
+<script src="@Url.Content("~/scripts/jquery.unobtrusive-ajax.min.js")"></script>
+<script src="@Url.Content("~/scripts/jquery.min.js")"></script>
 <body>
     <div class="header fixed-top">
         <div class="menu">
             <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">WebChat</a>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")">WebChat</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
                         aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -99,12 +102,12 @@
     <div class="bodypage">
         @RenderBody()
     </div>
-
-    <footer class="container-fluid bg-dark text-light text-center fixed-bottom p-2">
+    <div class="container-fluid bg-dark text-light text-center fixed-bottom p-2">
         All copyright by Nguyễn Đức Thiện
-    </footer>
+    </div>
 </body>
+<script src="@Url.Content("~/scripts/jquery.unobtrusive-ajax.min.js")"></script>
+<script src="@Url.Content("~/scripts/bootstrap.min.js")"></script>
+<script src="@Url.Content("~/scripts/jquery.min.js")"></script>
 
-<script src="~/scripts/bootstrap.min.js"></script>
-<script src="~/scripts/jquery.min.js"></script>
 </html>
