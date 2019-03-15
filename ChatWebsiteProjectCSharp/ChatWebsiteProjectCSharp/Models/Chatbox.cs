@@ -17,7 +17,7 @@ namespace ChatWebsiteProjectCSharp.Models {
         public string mess {
             get; set;
         }
-        public DateTimeOffset time {
+        public string time {
             get; set;
         }
     }

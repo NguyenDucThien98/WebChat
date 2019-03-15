@@ -60,11 +60,7 @@ namespace ChatWebsiteProjectCSharp.Controllers {
                             customerInfo.email = email;
                             customerInfo.gender = gender;
                             customerInfo.birth = birth;
-                            if (gender) {
-                                customerInfo.avatar = "1nam.png";
-                            } else {
-                                customerInfo.avatar = "0nu.png";
-                            }
+                            customerInfo.avatar = "defaultavt.jpg";
                             customerInfo.last_change_password = DateTime.Now;
                             db.customers.Add(customerInfo);
                             db.SaveChanges();

@@ -104,7 +104,7 @@
 .left-Box{
     float: left;
     width: 27%;
-    overflow-y: scroll;
+    overflow: auto !important;
     height: 90%;
     position: fixed; 
 }
