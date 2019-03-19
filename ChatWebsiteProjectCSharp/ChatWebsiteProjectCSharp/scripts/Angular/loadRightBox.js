@@ -1,29 +1,38 @@
-﻿var app = angular.module('left', []);
-app.controller("loadLeftBoxController", function ($scope, $http) {
+﻿var app = angular.module('right', []);
+
+
+app.controller("loadRightBoxController", function ($scope, $http) {
     $scope.currentpage = 1;
     $scope.totalpage = 0;
-    $scope.detailslist = [];
-    function getdata(page) {
+    $scope.listChatInfo = [];
+    $scope.headerInfo = [];
+    $scope.messid;
+    function getdata(messid) {
         debugger;
         $scope.Isloading = true;
-        $http.get("/Home/getLeftChatBox?page=" + page).then(function (response) {
-            angular.forEach(response.data.registerDataLeftBox, function (value) {
-                $scope.detailslist.push(value);
+        $scope.messid = messid;
+        $http.get("/Home/getRightChatBox?page=" + currentpage + "?messid=" + messid).then(function (response) {
+            angular.forEach(response.data.registerDataRightBox, function (value) {
+                $scope.listChatInfo.push(value);
             });
-            $scope.totalpage = response.data.totalCountLeftBox;
+            angular.forEach(response.data.header, function (value) {
+                $scope.headerInfo.push(value);
+            });
+            $scope.totalpage = response.data.totalCountRightBox;
             $scope.Isloading = false;
         }, function (error) {
             $scope.Isloading = false;
             alert('Failed');
         })
     }
-    getdata($scope.currentpage);
+
     $scope.Nextpage = function () {
         if ($scope.currentpage < $scope.totalpage) {
             $scope.currentpage += 1;
-            getdata($scope.currentpage);
+            getdata($messid);
         }
     };
+
 });
 app.directive('infinitescroll', function () {
     debugger;
@@ -38,9 +47,3 @@ app.directive('infinitescroll', function () {
         }
     }
 })
-
-
-
-
-
-

@@ -4,27 +4,22 @@ using System.Linq;
 using System.Web;
 
 namespace ChatWebsiteProjectCSharp.Models {
-  
-
-    public class regsiterlist {
-
-        public List<Chatbox> registerDataLeftBox {
+    public class headerRightChatBox {
+        public string messid {
             get; set;
         }
-
-        public int totalCountLeftBox {
+        public string id {
             get; set;
         }
-        public List<ChatBoxInfor> registerDataRightBox {
+        public string avt {
             get; set;
         }
-        public int totalCountRightBox {
+        public string name {
             get; set;
         }
-        public List<headerRightChatBox> header {
+        public string onlineStatus {
             get; set;
         }
-
+       
     }
-
 }

@@ -4,17 +4,15 @@ using System.Linq;
 using System.Web;
 
 namespace ChatWebsiteProjectCSharp.Models {
-    public class Chatbox {
-        public string id {
+    public class ChatBoxInfor {
+        public string userID {
             get; set;
         }
-        public string avatar {
+      
+        public string userAVT {
             get; set;
         }
-        public string name {
-            get; set;
-        }
-        public string mess {
+        public string textChat {
             get; set;
         }
         public string time {

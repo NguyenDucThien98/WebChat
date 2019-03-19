@@ -4,7 +4,7 @@
     Layout = "~/Views/Header_Footer.cshtml";
 }
 
-<div ng-app="getleftchatbox" ng-controller="loadLeftBoxController">
+<div ng-app="left" ng-controller="loadLeftBoxController">
     <div class="left-Box" infinitescroll="Nextpage()">
         <div class="row">
             <form class="w-100 searchbtn">
@@ -14,19 +14,19 @@
         </div>
         <div class="marginImportant"></div>
         <div class="row" ng-repeat="item in detailslist">
-            <nav class="navbar navbar-expand-sm navbar-light   w-100">
-                <button class="navbar-toggler d-lg-none avt" type="button" data-toggle="collapse"
+            <nav class="navbar navbar-expand-sm navbar-light w-100" data-ng-init="messid='{{item.id}}';">
+                <button data-ng-click="getdata(messid)" class="navbar-toggler d-lg-none avt" type="button" data-toggle="collapse"
                         data-target="#{{item.id}}" aria-label="Toggle navigation">
                     <div class="avt">
                         <img src="/image/{{item.avatar}}" alt="Avatar">
                     </div>
                 </button>
                 <div class="collapse navbar-collapse">
-                    <button class="avt" type="button" data-toggle="collapse" data-target="#{{item.id}}"
+                    <button data-ng-click="getdata(messid)" class="avt" type="button" data-toggle="collapse" data-target="#{{item.id}}"
                             aria-label="Toggle navigation">
                         <img src="/image/{{item.avatar}}" alt="Avatar">
                     </button>
-                    <button class="box-sms-left notseen" type="button" data-toggle="collapse" data-target="{{item.id}}"
+                    <button data-ng-click="getdata(messid)" class="box-sms-left notseen" type="button" data-toggle="collapse" data-target="{{item.id}}"
                             aria-label="Toggle navigation">
                         <div class="username-box-left">
                             {{item.name}}
@@ -46,3 +46,58 @@
     </div>
 </div>
 
+<div ng-app="right" ng-controller="loadRightBoxController">
+    <div ng-repeat="item in headerInfo ">
+        <div class="right-Box" id="{{item.messid}}"  infinitescroll="Nextpage()">
+            <div class="row justify-content-start" id="{{item.messid}}">
+                <form class="rightheader form-check-inline">
+                    <img src="/image/{{item.avt}}" alt="Avatar">
+                    <div class="pl-3">
+                        <div class="name">{{item.name}}</div>
+                        {{item.onlineStatus}}
+                    </div>
+                </form>
+            </div>
+            <div class="marginImportant"></div>
+            <div ng-repeat="item2 in listChatInfo">
+                <div class="row justify-content-start" ng-if="item2.userID == item.id">
+                    <div class="reserveAvt">
+                        <img src="/image/{{item2.userAVT}}" alt="Avatar">
+                    </div>
+                    <div class="w-custom">
+                        <div class="reserveContent">
+                            <p>
+                                {{item2.textChat}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timebox pl-2">
+                       {{item2.time}}
+                    </div>
+                </div>
+                <div class="row justify-content-end" ng-if="item2.userID != item.id" >
+                    <div class="timebox pr-2">
+                        {{item2.time}}
+                    </div>
+                    <div class="w-custom">
+                        <div class="sentContent text-right">
+                            <p>
+                                {{item2.textChat}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="sentAvt">
+                        <img src="/image/{{item2.userAVT}}" alt="Avatar">
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-end sentbtn" id="{{item.messid}}">
+                <form class="w-100 form-inline">
+                    <input class="form-control" type="text" placeholder="enter your message">
+                    <button class="btn btn-danger" type="submit">Sent</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

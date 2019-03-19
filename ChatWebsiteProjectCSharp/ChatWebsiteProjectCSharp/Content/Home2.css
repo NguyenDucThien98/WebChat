@@ -6,7 +6,7 @@
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;  /* Preferred icon size */
+    font-size: 24px; /* Preferred icon size */
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -14,140 +14,171 @@
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-  
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
     /* Support for Safari and Chrome. */
     text-rendering: optimizeLegibility;
-  
     /* Support for Firefox. */
     -moz-osx-font-smoothing: grayscale;
-  
     /* Support for IE. */
     font-feature-settings: 'liga';
-  }
-  @font-face {
+}
+
+@font-face {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
     src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
-    src: local('Material Icons'),
-      local('MaterialIcons-Regular'),
-      url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
-      url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
-      url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
-  }
-  
-  /* Rules for sizing the icon. */
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'), url(https://example.com/MaterialIcons-Regular.woff) format('woff'), url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
 
 /* Rules for using icons as black on a light background. */
-.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
-.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+.material-icons.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+    .material-icons.md-dark.md-inactive {
+        color: rgba(0, 0, 0, 0.26);
+    }
 
 /* Rules for using icons as white on a dark background. */
-.material-icons.md-light { color: rgba(255, 255, 255, 1); }
-.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+.material-icons.md-light {
+    color: rgba(255, 255, 255, 1);
+}
+
+    .material-icons.md-light.md-inactive {
+        color: rgba(255, 255, 255, 0.3);
+    }
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
-.bodypage{
+
+.bodypage {
     margin-top: 55px;
     margin-bottom: 40px;
     margin-left: 10px;
     margin-right: 10px;
 }
-.header-info{
+
+.header-info {
     background-color: #FF5900;
     height: 100px;
     font-family: "Courgette";
-    height:100px;  
+    height: 100px;
     text-align: center;
     color: white;
 }
-.title{
+
+.title {
     height: 60px;
     line-height: 60px;
     font-size: 3em;
 }
-.infor-content{
+
+.infor-content {
     height: 40px;
     line-height: 40px;
     font-size: 1em;
 }
 
-.avt{
-  width: 50px;
-   border: none;
-}
-.avt img,.reserveAvt img ,.sentAvt img{
+.avt {
     width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    border: none;
 }
-.content-inbox-left{
-   width: 80%; 
+
+    .avt img, .reserveAvt img, .sentAvt img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+.content-inbox-left {
+    width: 80%;
 }
-.right-Box{
+
+.right-Box {
     float: right;
     width: 73%;
     margin-bottom: 80px;
 }
-.right-Box .row{
-    margin: 10px;
-}
-.left-Box{
+
+    .right-Box .row {
+        margin: 10px;
+    }
+
+.left-Box {
     float: left;
     width: 27%;
     overflow: auto !important;
     height: 90%;
-    position: fixed; 
+    position: fixed;
 }
 
-button:focus{
+button:focus {
     outline: none !important;
 }
-.searchbtn{
-   width: 27% !important;
+
+.searchbtn {
+    width: 27% !important;
     position: fixed;
     top: 55px;
     left: 0;
     /* right: 60px; */
-   padding-left: 10px;
-   padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 15px;
     z-index: 200;
 }
-.left-Box, .right-Box{
+
+.left-Box, .right-Box {
     font-size: 12px;
 }
+
 .rightheader {
     width: 100% !important;
     position: fixed;
     top: 55px;
     left: 27%;
     /* right: 60px; */
-   margin-left: 10px;
-   padding: 10px;
+    margin-left: 10px;
+    padding: 10px;
     z-index: 300;
-    background-color:coral;
-    height: 75px; 
+    background-color: coral;
+    height: 75px;
     color: white;
 }
-.name{
+
+.name {
     font-size: 16px;
     font-weight: bold;
 }
-.rightheader img{
+
+.rightheader img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
 }
-.sentbtn{
+
+.sentbtn {
     width: 73% !important;
     position: fixed;
     right: 0;
@@ -155,90 +186,98 @@ button:focus{
     left: 27%;
     z-index: 200;
 }
-.sentbtn .form-control{
-    width: 70%;
-    max-width: 85%;
-/* min-width: 70%; */
+
+    .sentbtn .form-control {
+        width: 70%;
+        max-width: 85%;
+        /* min-width: 70%; */
+    }
+
+    .sentbtn .btn {
+        width: 30%;
+        /* min-width: 20%;  */
+    }
+
+.marginImportant {
+    margin-top: 70px;
 }
-.sentbtn .btn{
-    width: 30%;
-  
-    /* min-width: 20%;  */
-}
-.marginImportant{
-    margin-top:70px; 
-}
-.left-Box .row{
+
+.left-Box .row {
     border-bottom: 3px dotted #FF5900;
     padding-bottom: 10px;
-   margin-right: 10px;
+    margin-right: 10px;
 }
-.left-Box .row:hover{
-    background-color:cadetblue;
-}
-.notseen{
+
+    .left-Box .row:hover {
+        background-color: cadetblue;
+    }
+
+.notseen {
     font-weight: bold;
 }
 
-.mess-box-left{
+.mess-box-left {
     -webkit-box-orient: vertical !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 1 !important;
     max-height: 2.7em !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
-    
 }
-.username-box-left { 
-    font-weight:bold !important;  
+
+.username-box-left {
+    font-weight: bold !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
      word-break: break-all !important;
     font-size: 16px !important;
 }
 
-.box-sms-left{
-   border: none;
-   background: none;
-   text-align: left;
-   width: 100%;
+.box-sms-left {
+    border: none;
+    background: none;
+    text-align: left;
+    width: 100%;
     padding: 5px;
     padding-left: 10px;
 }
 /* ok */
-.reserveContent p{
+.reserveContent p {
     color: white;
     background-color: #FF5900;
     padding: 10px;
     border-radius: 25px;
-    margin-left:10px ;  
+    margin-left: 10px;
 }
-.sentContent p{
+
+.sentContent p {
     color: white;
     background-color: rgb(8, 101, 207);
     padding: 10px;
-    border-radius: 25px;   
-    margin-right:10px ;  
+    border-radius: 25px;
+    margin-right: 10px;
 }
-.w-custom{
+
+.w-custom {
     max-width: 60%;
     width: auto;
 }
-.left-Box .active{
-    background-color:wheat;
-    
+
+.left-Box .active {
+    background-color: wheat;
 }
 
-.imageInfor{
+.imageInfor {
     width: 200px;
     height: 200px;
 }
-.searchResult{
+
+.searchResult {
     color: red;
     font-size: 28px;
 }
 
-.sentAvt2 img{
+.sentAvt2 img {
     width: 100%;
     padding: 10px;
     border-radius: 20px;
